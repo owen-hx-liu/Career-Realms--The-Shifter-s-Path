@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq6sye3hqfmtm"]
+
+[ext_resource type="Script" uid="uid://t8rlxge5olp4" path="res://scripts/LevelTransition.gd" id="1_og05h"]
+
+[node name="LevelTransition" type="Node2D"]
+script = ExtResource("1_og05h")
