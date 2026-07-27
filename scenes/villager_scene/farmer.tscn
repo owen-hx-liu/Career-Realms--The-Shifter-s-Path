@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://coackgcy5c6ew"]
+
+[ext_resource type="Texture2D" uid="uid://dtn0xyktsmgod" path="res://art/Screenshot_2025-11-05_at_8.28.03_PM-removebg-preview.png" id="1_2qlof"]
+[ext_resource type="Script" uid="uid://dl6di3iwxmw7f" path="res://scripts/villagerscript/farmer.gd" id="1_hkter"]
+[ext_resource type="PackedScene" uid="uid://cgebdyegjoeug" path="res://scenes/dialogue_scene/villager_dialogue.tscn" id="1_vltvv"]
+[ext_resource type="PackedScene" uid="uid://dhpxwyue5aj6q" path="res://scenes/sign.tscn" id="2_rov4t"]
+[ext_resource type="Script" uid="uid://bfml8b27ytuit" path="res://scripts/villagerscript/area_2dfarmer.gd" id="4_go23t"]
+[ext_resource type="PackedScene" uid="uid://b0m2ltrdjhi5c" path="res://scenes/dialogue_scene/heal_dialogue.tscn" id="6_loie6"]
+[ext_resource type="PackedScene" uid="uid://bm68a6p564wpr" path="res://scenes/dialogue_scene/failed_dialogue.tscn" id="7_a2y1s"]
+[ext_resource type="PackedScene" uid="uid://yjnx7e76qcqy" path="res://scenes/Everything_in_healer_hut_scene/potionselectionmenu.tscn" id="8_a2y1s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7541a"]
+radius = 108.019
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkter"]
+size = Vector2(92, 168)
+
+[node name="farmer" type="CharacterBody2D"]
+script = ExtResource("1_hkter")
+
+[node name="sign" parent="." instance=ExtResource("2_rov4t")]
+offset_left = -12.0
+offset_top = 81.0
+offset_right = 28.0
+offset_bottom = 121.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2qlof")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("4_go23t")
+recipe_ui_path = NodePath("../sign")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_7541a")
+
+[node name="villager_dialogue" parent="." instance=ExtResource("1_vltvv")]
+offset_left = 60.0
+offset_top = -124.0
+offset_right = 178.0
+offset_bottom = -19.0
+scale = Vector2(2, 2)
+d_file = "res://dialogue/dialogue files/villager_2_dialogue.json"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_hkter")
+
+[node name="healed_dialogue" parent="." instance=ExtResource("6_loie6")]
+offset_left = 60.0
+offset_top = -124.0
+offset_right = 100.0
+offset_bottom = -84.0
+scale = Vector2(2, 2)
+d_file = "res://dialogue/dialogue files/farmer_healed.json"
+
+[node name="failed_dialogue" parent="." instance=ExtResource("7_a2y1s")]
+offset_left = 60.0
+offset_top = -124.0
+offset_right = 100.0
+offset_bottom = -84.0
+scale = Vector2(2, 2)
+d_file = "res://dialogue/dialogue files/farmer_failed.json"
+
+[node name="potionselectionmenu" parent="." instance=ExtResource("8_a2y1s")]
+offset_left = 61.0
+offset_top = -80.0
+offset_right = 131.0
+offset_bottom = -10.0
+scale = Vector2(2, 2)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgwd1vbvb04f1"]
+
+[ext_resource type="Script" uid="uid://d4cf5q56t4rr" path="res://scripts/CanalTile.gd" id="1_38ef1"]
+[ext_resource type="Texture2D" uid="uid://yml7foo02vnu" path="res://assets/generated/canal/canal_tiles.png" id="2_canal"]
+
+[node name="Canal" type="Node2D"]
+script = ExtResource("1_38ef1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_canal")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)

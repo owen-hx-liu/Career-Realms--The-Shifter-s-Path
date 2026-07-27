@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgebdyegjoeug"]
+
+[ext_resource type="Script" uid="uid://ba121q0ode03s" path="res://scripts/dialogue_script/villager_dialogue.gd" id="1_fapnr"]
+[ext_resource type="Texture2D" uid="uid://ng0jew3o28tq" path="res://art/inventory-slot.png" id="2_jw668"]
+
+[node name="villager_dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 120.0
+offset_bottom = 105.0
+script = ExtResource("1_fapnr")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 119.0
+offset_bottom = 105.0
+texture = ExtResource("2_jw668")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="name" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 197.0
+offset_bottom = 25.0
+scale = Vector2(0.7, 0.7)
+text = "name
+"
+
+[node name="text" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 15.0
+offset_right = 195.0
+offset_bottom = 163.0
+scale = Vector2(0.6, 0.6)
+text = "good omewe"

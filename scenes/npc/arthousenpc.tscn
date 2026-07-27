@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://c08ocrmpycvc6"]
+
+[ext_resource type="Script" uid="uid://clddiraptv7bl" path="res://scripts/npc/arthousenpc.gd" id="1_4itru"]
+[ext_resource type="PackedScene" uid="uid://cvpv54pxhc44t" path="res://scenes/DialogueBox.tscn" id="2_xsdit"]
+[ext_resource type="Texture2D" uid="uid://k6kbnfkc4prb" path="res://art/PIPOYA FREE RPG Character Sprites 32x32/PIPOYA FREE RPG Character Sprites 32x32/Female/Female 08-2.png" id="3_yl7nc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1qg1"]
+atlas = ExtResource("3_yl7nc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kxlop"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1qg1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eyoee"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ygs1c"]
+radius = 29.1548
+
+[node name="Arthousenpc" type="CharacterBody2D"]
+script = ExtResource("1_4itru")
+dialogue_box_scene = ExtResource("2_xsdit")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kxlop")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_eyoee")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ygs1c")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfgx5k5kjpaqo"]
+
+[ext_resource type="Texture2D" uid="uid://ng0jew3o28tq" path="res://art/inventory-slot.png" id="1_ohgyc"]
+
+[sub_resource type="GDScript" id="GDScript_ohgyc"]
+script/source = "extends Control
+
+signal dialogue_finished
+@export_file(\"*.json\") var d_file
+var dialogue =[]
+var current_dialogue_id = 0
+var d_active = false
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$NinePatchRect.visible = false
+	# Replace with function body.
+
+func start():
+	if d_active:
+		return
+	$NinePatchRect.visible = true
+	d_active = true
+	dialogue = load_dialogue()
+	current_dialogue_id = -1
+	next_script()
+	
+func load_dialogue():
+	var file = FileAccess.open(\"res://dialogue/desert_npc.json\", FileAccess.READ)
+	var content = JSON.parse_string(file.get_as_text())
+	return content
+	
+		
+	
+func _input(event):
+	if event.is_action_pressed(\"ui_accept\"):
+		next_script()
+	
+	
+func next_script():
+	if !d_active:
+		return
+	current_dialogue_id +=1
+	if current_dialogue_id >= dialogue.size():
+		d_active = false
+		$NinePatchRect.visible = false
+		emit_signal(\"dialogue_finished\")
+		return
+			
+	$NinePatchRect/name.text = dialogue[current_dialogue_id]['name']
+	$NinePatchRect/text.text = dialogue[current_dialogue_id]['text']
+"
+
+[node name="dialogue_chatbox" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_ohgyc")
+d_file = "res://dialogue/desert_npc.json"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -13.0
+offset_right = 66.0
+offset_bottom = 27.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_ohgyc")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+metadata/_edit_group_ = true
+
+[node name="name" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 95.0
+offset_bottom = 24.0
+scale = Vector2(0.4, 0.4)
+text = "Name:"
+
+[node name="text" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 8.0
+offset_right = 190.0
+offset_bottom = 102.0
+scale = Vector2(0.3, 0.3)
+text = "good one"

@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://b47rvjlkocvhj"]
+
+[ext_resource type="Script" uid="uid://dkixftqkayb26" path="res://scripts/canvas_layer.gd" id="1_ghj5q"]
+[ext_resource type="Texture2D" uid="uid://ng0jew3o28tq" path="res://art/inventory-slot.png" id="2_ek3oe"]
+
+[node name="narrator" type="CanvasLayer"]
+script = ExtResource("1_ghj5q")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 331.0
+offset_top = 4.0
+offset_right = 519.0
+offset_bottom = 126.0
+scale = Vector2(2, 2)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+layout_mode = 0
+offset_right = 189.0
+offset_bottom = 117.0
+rotation = -0.000472088
+texture = ExtResource("2_ek3oe")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/NinePatchRect"]
+custom_minimum_size = Vector2(0.7, 0.7)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 364.0
+offset_bottom = 111.0
+scale = Vector2(0.5, 0.5)
+text = "67"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 55.0
+offset_right = 365.0
+offset_bottom = 174.0
+scale = Vector2(0.5, 0.5)
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 2

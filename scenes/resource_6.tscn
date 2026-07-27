@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://53u2jcts6qub"]
+
+[ext_resource type="Script" path="res://scripts/resource6.gd" id="1_ndpfe"]
+[ext_resource type="Texture2D" uid="uid://degmyndllnsbi" path="res://art/OpenmonItemIcons.png" id="1_xe0i4"]
+[ext_resource type="Resource" uid="uid://b6t6elrbfnccu" path="res://inventory/items/crystal.tres" id="2_3k1n6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndpfe"]
+atlas = ExtResource("1_xe0i4")
+region = Rect2(122, 99, 39, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3k1n6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndpfe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3k1n6"]
+radius = 26.0192
+
+[node name="resource6" type="Node2D"]
+script = ExtResource("1_ndpfe")
+item = ExtResource("2_3k1n6")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(0, -1.19209e-07)
+scale = Vector2(0.314103, 0.410714)
+sprite_frames = SubResource("SpriteFrames_3k1n6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_3k1n6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-2, -2, 0, -6, 4, -3, 6, 4, 1, 5, -3, 4, -5, 2)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

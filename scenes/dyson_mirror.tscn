@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy50nm1rr0orb"]
+
+[ext_resource type="Script" uid="uid://bp8pmsjqebnml" path="res://scenes/mirror.gd" id="1_mirror"]
+[ext_resource type="Texture2D" uid="uid://cytakni0o3jro" path="res://art/free-pixel-art-enemy-spaceship-2d-sprites/solarPanel.png" id="2_panel"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dyson"]
+radius = 18.0
+
+[node name="mirror" type="Area2D"]
+script = ExtResource("1_mirror")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_panel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dyson")

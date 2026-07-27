@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://c4ue8umnjn7r"]
+
+[ext_resource type="Script" uid="uid://dvwica3tashgj" path="res://inventory/inventory_item.gd" id="1_pxrk3"]
+[ext_resource type="Texture2D" uid="uid://cth3ltac4mgb1" path="res://inventory/Screenshot_2025-10-29_at_8.47.30_PM-removebg-preview.png" id="2_hamfq"]
+
+[resource]
+script = ExtResource("1_pxrk3")
+name = "goldenegg"
+texture = ExtResource("2_hamfq")
+metadata/_custom_type_script = "uid://dvwica3tashgj"

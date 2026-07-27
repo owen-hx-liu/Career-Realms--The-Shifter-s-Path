@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsottoriu8x41"]
+
+[ext_resource type="Script" path="res://tools/immune_shot.gd" id="1_imsh"]
+
+[node name="ImmuneShot" type="Node"]
+script = ExtResource("1_imsh")

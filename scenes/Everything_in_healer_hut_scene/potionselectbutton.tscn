@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgyxpuqe66wve"]
+
+[ext_resource type="Script" uid="uid://chhuykgqjwgwu" path="res://scripts/Everything_in_healer_hut_script/potionselectbutton.gd" id="1_5k452"]
+
+[node name="potionselectbutton" type="Button"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5k452")

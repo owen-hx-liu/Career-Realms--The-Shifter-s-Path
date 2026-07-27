@@ -1,0 +1,156 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgoucm43lpvwt"]
+
+[ext_resource type="Script" uid="uid://dac7qq1wlgnxa" path="res://scenes/instructions_screen.gd" id="1_tvdym"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdp1t"]
+bg_color = Color(0.101961, 0.164706, 0.227451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="InstructionsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -606.0
+offset_top = -323.0
+offset_right = -606.0
+offset_bottom = -323.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_tvdym")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0392157, 0.0392157, 0.101961, 1)
+
+[node name="ContentPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(900, 700)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rdp1t")
+
+[node name="MarginContainer" type="MarginContainer" parent="ContentPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ContentPanel/MarginContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TitleLabel" type="Label" parent="ContentPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "🦠 IMMUNE DEFENSE PROTOCOL 🛡️"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ContentPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ContentPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(800, 450)
+layout_mode = 2
+
+[node name="InstructionsText" type="RichTextLabel" parent="ContentPanel/MarginContainer/VBoxContainer/ScrollContainer"]
+custom_minimum_size = Vector2(800, 400)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+bbcode_enabled = true
+text = "[center][font_size=28][color=cyan]MISSION BRIEFING[/color][/font_size][/center]
+
+[font_size=20][color=yellow]OBJECTIVE:[/color][/font_size]
+The body is under attack by [color=red]5 dangerous pathogens[/color]! You must assemble a team of [color=cyan]5 immune cells[/color] to defend against them.
+
+[font_size=20][color=yellow]HOW TO PLAY:[/color][/font_size]
+
+[color=lime]1. ANALYZE THE THREAT[/color]
+   • Look at the [color=red]pathogen cards[/color] on the left
+   • Note their type, HP, attack power, and weaknesses
+
+[color=lime]2. BUILD YOUR TEAM[/color]
+   • Select [color=cyan]5 immune cells[/color] from the right side
+   • Each cell has unique abilities and strengths
+   • Click a cell to add it to your team
+   • Click again to remove it
+
+[color=lime]3. DEPLOY & SCORE[/color]
+   • Press \"DEPLOY IMMUNE RESPONSE\" when ready
+   • Your team will be evaluated against the pathogens
+   • Earn stars based on your strategy!
+
+[font_size=20][color=yellow]SCORING SYSTEM:[/color][/font_size]
+
+[color=lime]⭐⭐⭐⭐⭐ Perfect Match:[/color] +50 points
+   • Your immune cell is the pathogen's exact weakness!
+
+[color=cyan]⭐⭐⭐ Good Match:[/color] +30 points
+   • Your cell is strong against that pathogen type
+
+[color=gray]⭐ Neutral:[/color] +10 points
+   • Standard effectiveness
+
+[color=red]✗ Bad Match:[/color] -10 points
+   • Pathogen resists your immune cell
+
+[color=yellow]+ Survival Bonus:[/color] +20 points
+   • Your cell has more HP than the pathogen's attack
+
+[font_size=20][color=yellow]STRATEGY TIPS:[/color][/font_size]
+
+- [b]Read the weaknesses[/b] - Each pathogen card shows what it's weak to
+- [b]Diversify your team[/b] - Cover multiple pathogen types
+- [b]Balance offense and defense[/b] - Consider both attack power and HP
+- [b]Use special abilities[/b] - Support cells can boost your entire team
+
+[center][color=lime]Good luck, Commander! The body's defense depends on you![/color][/center]"
+fit_content = true
+
+[node name="HSeparator2" type="HSeparator" parent="ContentPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TipsLabel" type="Label" parent="ContentPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "💡 TIP: Match immune cells to pathogen weaknesses for perfect scores!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="StartButton" type="Button" parent="ContentPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0.913725, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "▶ BEGIN MISSION"

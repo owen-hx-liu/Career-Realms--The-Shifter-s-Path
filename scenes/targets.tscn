@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtxbsctdtjxho"]
+
+[ext_resource type="Texture2D" uid="uid://dplkeu60mqwml" path="res://art/Screenshot_2025-12-28_at_8.38.38_PM-removebg-preview.png" id="1_kese5"]
+[ext_resource type="Script" uid="uid://co00dd2lksjrb" path="res://scripts/targets.gd" id="1_qfr10"]
+[ext_resource type="Texture2D" uid="uid://pwxpkps0o3sl" path="res://art/Screenshot_2025-12-28_at_9.04.06_PM-removebg-preview.png" id="2_5euia"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5euia"]
+radius = 84.0
+height = 238.0
+
+[node name="targets" type="StaticBody2D"]
+script = ExtResource("1_qfr10")
+texture_off = ExtResource("2_5euia")
+texture_on = ExtResource("1_kese5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kese5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_5euia")

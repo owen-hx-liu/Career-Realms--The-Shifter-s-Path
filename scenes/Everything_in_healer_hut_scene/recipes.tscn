@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://dripc4dfx5d5j"]
+
+[ext_resource type="Texture2D" uid="uid://ng0jew3o28tq" path="res://art/inventory-slot.png" id="1_xmpxi"]
+
+[node name="recipes" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 146.0
+offset_bottom = 95.0
+texture = ExtResource("1_xmpxi")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_right = 487.0
+offset_bottom = 270.0
+scale = Vector2(0.3, 0.3)
+text = "       Potion Name	                               Ingredients
+        Blue Elixir	                         1 Crystal, 2 Blueberries
+    
+     Golden Elixir	            1 Golden Egg, 2 Yellow Berries, 1 Crystal
+      
+      Green Elixir                         2 Mushrooms, 1 Carrot 
+
+     Orange Elixir	                      1 Carrot, 2 Yellow Berries
+
+     Purple Elixir	                 1 Blueberry, 2 Mushrooms, 1 Crystal
+
+      Red Elixir	                      2 Yellow Berries, 1 Carrot, 1 Crystal"

@@ -1,0 +1,11 @@
+
+	[
+	{"name": "Worker", "text": "Hello there!"},
+	{"name": "Worker", "text": "Our village is going to be flooded! Can you help us build a canal to divert the water?"},
+	{"name": "Player", "text": "Of course! What do we need to get started?"},
+	{"name": "Worker", "text": "We'll need some materials before we can begin construction."},
+	{"name": "Worker", "text": "Gather 5 Metal, 10 Wood, and 8 Stone to reinforce the canal walls."},
+	{"name": "Player", "text": "Got it! I’ll collect the materials and meet you by the riverbank."},
+	{"name": "Worker", "text": "Hurry! The floodwaters are rising fast!"},
+	{"name": "System", "text": "Objective Updated: Collect 5 Metal, 10 Wood, and 8 Stone to start building the canal."}
+]

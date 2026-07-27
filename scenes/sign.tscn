@@ -1,0 +1,14 @@
+[gd_scene load_steps=0 format=3 uid="uid://dhpxwyue5aj6q"]
+
+[node name="sign" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 183.0
+offset_bottom = 119.0
+scale = Vector2(1.3, 1.3)
+text = "Press G to give potion"

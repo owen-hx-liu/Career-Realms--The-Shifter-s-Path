@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://4nl2objox5yw"]
+
+[ext_resource type="Script" uid="uid://ds84tsqh161s2" path="res://scripts/npc/librarian.gd" id="1_0qc8r"]
+[ext_resource type="Texture2D" uid="uid://ds7x8lgb7by7j" path="res://art/PIPOYA FREE RPG Character Sprites 32x32/PIPOYA FREE RPG Character Sprites 32x32/Male/Male 04-2.png" id="2_jxqcx"]
+[ext_resource type="PackedScene" uid="uid://cvpv54pxhc44t" path="res://scenes/DialogueBox.tscn" id="2_y0xll"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0xll"]
+atlas = ExtResource("2_jxqcx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ceafw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0xll")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oe8be"]
+radius = 8.06226
+
+[node name="LibrarianNpc" type="CharacterBody2D"]
+script = ExtResource("1_0qc8r")
+dialogue_box_scene = ExtResource("2_y0xll")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ceafw")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_oe8be")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-18, -6, -18, 10, -40, 40, 40, 39, 18, 12, 16, -7, 0, -28)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbaesmk8o63ok"]
+[gd_scene load_steps=11 format=3 uid="uid://na38xr4lbevj"]
 
 [ext_resource type="Script" uid="uid://51modelshdxl" path="res://scripts/house.gd" id="1_t1nu3"]
 [ext_resource type="Texture2D" uid="uid://bmx7nekg0mdu1" path="res://art/Cute_Fantasy_Free/Tiles/Grass_Middle.png" id="2_5isli"]
 [ext_resource type="Texture2D" uid="uid://b56cjux1g8kud" path="res://art/Super_Retro_World_Interior_pack_week42/atlas_32x.png" id="3_abcvq"]
 [ext_resource type="PackedScene" uid="uid://chfrhxqg255ho" path="res://scenes/player.tscn" id="4_jkh4f"]
 [ext_resource type="Script" uid="uid://bpkxn4u4if5rf" path="res://scripts/SceneTransitionArea.gd" id="5_10yqm"]
+[ext_resource type="PackedScene" uid="uid://1oeew5q8vklj" path="res://scenes/desert_npc.tscn" id="6_5isli"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qtlar"]
 texture = ExtResource("2_5isli")
@@ -2636,7 +2637,6 @@ layer_1/tile_data = PackedInt32Array(458760, 196610, 11, 458761, 720898, 11, 458
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(-1, 0)
 polygon = PackedVector2Array(9, 6, 184, 5, 184, 119, 98, 119, 98, 131, 80, 131, 78, 120, 10, 118, 10, 11, -103, 189, -90, 341, 314, 366, 578, 171, 558, -43, 271, -82, 44, -81, -48, -69)
 
 [node name="player" parent="." instance=ExtResource("4_jkh4f")]
@@ -2645,11 +2645,14 @@ position = Vector2(88, 107)
 [node name="house_exit" type="Area2D" parent="."]
 script = ExtResource("5_10yqm")
 target_scene_path = "res://scenes/World.tscn"
-spawn_position = Vector2(332, 256)
+spawn_position = Vector2(160, 188)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="house_exit"]
 position = Vector2(88, 129)
 shape = SubResource("RectangleShape2D_se78b")
+
+[node name="desert_npc" parent="." instance=ExtResource("6_5isli")]
+position = Vector2(99, 26)
 
 [connection signal="body_entered" from="house_exit" to="house_exit" method="_on_body_entered"]
 [connection signal="body_exited" from="house_exit" to="house_exit" method="_on_body_exited"]

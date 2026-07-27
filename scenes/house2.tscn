@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bawh081wtl356"]
+[gd_scene load_steps=7 format=3 uid="uid://cfmmbg6u3we7m"]
 
 [ext_resource type="Texture2D" uid="uid://b56cjux1g8kud" path="res://art/Super_Retro_World_Interior_pack_week42/atlas_32x.png" id="1_kl2nh"]
 [ext_resource type="PackedScene" uid="uid://chfrhxqg255ho" path="res://scenes/player.tscn" id="2_2cpcr"]
@@ -2655,7 +2655,7 @@ position = Vector2(93, 110)
 [node name="house2_exit" type="Area2D" parent="."]
 script = ExtResource("3_7kgyd")
 target_scene_path = "res://scenes/World.tscn"
-spawn_position = Vector2(201, 607)
+spawn_position = Vector2(573, 210)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="house2_exit"]
 position = Vector2(93, 132)

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://d35jwe4r8vq54"]
+
+[ext_resource type="Script" uid="uid://balw62xdtl657" path="res://scenes/scoremenu.gd" id="1_6wom0"]
+[ext_resource type="Texture2D" uid="uid://cd24ls4y7qsj5" path="res://art/Screenshot_2026-01-05_at_9.32.55_PM-removebg-preview.png" id="1_25qii"]
+
+[node name="WinMenu" type="Node2D"]
+z_index = 100
+script = ExtResource("1_6wom0")
+required_ids = Array[String](["17", "15", "16", "18", "19"])
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_right = 312.0
+offset_bottom = 192.0
+texture = ExtResource("1_25qii")
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 13.0
+offset_right = 156.0
+offset_bottom = 34.0
+scale = Vector2(2, 2)
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Node2D" type="Node2D" parent="NinePatchRect"]

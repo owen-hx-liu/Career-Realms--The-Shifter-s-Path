@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf3hxjcwbdt2q"]
+
+[ext_resource type="Script" uid="uid://dhnk45uhjowo4" path="res://scripts/core/EngingCutscene.gd" id="1_ra07p"]
+[ext_resource type="FontFile" uid="uid://bk8spmrsunedy" path="res://art/Cute_Fantasy_Free2/Outdoor decoration/determination/determination.ttf" id="2_k1gtd"]
+
+[node name="EndingCutscene" type="CanvasLayer"]
+script = ExtResource("1_ra07p")
+custom_font = ExtResource("2_k1gtd")

@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkmy38vq6gal6"]
+
+[ext_resource type="Script" uid="uid://bvinj2u057mpg" path="res://scenes/congrats.gd" id="1_c74hn"]
+[ext_resource type="FontFile" uid="uid://buewng7027c74" path="res://art/Dialogue/determination.ttf" id="2_qs450"]
+
+[node name="Congrats" type="CanvasLayer"]
+script = ExtResource("1_c74hn")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 874.0
+offset_bottom = 491.0
+color = Color(0.0627451, 0.0627451, 0.290196, 0.733333)
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 59.0
+offset_right = 672.0
+offset_bottom = 126.0
+theme_override_fonts/font = ExtResource("2_qs450")
+theme_override_font_sizes/font_size = 50
+text = "Congratulations!"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 149.0
+offset_right = 653.0
+offset_bottom = 261.0
+
+[node name="Label" type="Label" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "⭐"
+
+[node name="Label2" type="Label" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "⭐"
+
+[node name="Label3" type="Label" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "⭐"
+
+[node name="Label4" type="Label" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "⭐"
+
+[node name="Label5" type="Label" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "⭐"
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 309.0
+offset_right = 735.0
+offset_bottom = 363.0
+theme_override_fonts/font = ExtResource("2_qs450")
+theme_override_font_sizes/font_size = 40
+text = "All patients have been cured!"

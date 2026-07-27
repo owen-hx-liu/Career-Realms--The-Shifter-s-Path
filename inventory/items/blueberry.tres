@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://b6mr3pu1nqib5"]
+
+[ext_resource type="Script" uid="uid://dvwica3tashgj" path="res://inventory/inventory_item.gd" id="1_mkofq"]
+[ext_resource type="Texture2D" uid="uid://c7gk6or43sws5" path="res://inventory/Screenshot_2025-10-29_at_8.47.56_PM-removebg-preview.png" id="2_vgu6l"]
+
+[resource]
+script = ExtResource("1_mkofq")
+name = "blueberry"
+texture = ExtResource("2_vgu6l")
+metadata/_custom_type_script = "uid://dvwica3tashgj"

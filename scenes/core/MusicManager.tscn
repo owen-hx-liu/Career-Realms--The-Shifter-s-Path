@@ -1,0 +1,22 @@
+[gd_scene load_steps=10 format=3 uid="uid://c4ne248xeiekl"]
+
+[ext_resource type="Script" uid="uid://bb2q51qqdo483" path="res://scripts/core/MusicManager.gd" id="1_qy4uu"]
+[ext_resource type="AudioStream" uid="uid://d3q8fqa5sqe4l" path="res://assets/1-05. New Days.mp3" id="2_66u46"]
+[ext_resource type="AudioStream" uid="uid://dgcfsruk71wie" path="res://assets/03. Theme Shop.mp3" id="2_v44fb"]
+[ext_resource type="AudioStream" uid="uid://bi7s1ghbj66tn" path="res://assets/01.mp3" id="2_yn0t2"]
+[ext_resource type="AudioStream" uid="uid://8yhja8h6agbg" path="res://assets/02.mp3" id="3_jyrmp"]
+[ext_resource type="AudioStream" uid="uid://d2k2kceyykqwy" path="res://assets/22. Credits (Wii Play Motion).mp3" id="3_vjtyv"]
+[ext_resource type="AudioStream" uid="uid://pl0d6k0bp5qm" path="res://assets/11.mp3" id="4_aafed"]
+[ext_resource type="AudioStream" uid="uid://cs04g5nvkyw3l" path="res://assets/robotmusic.mp3" id="6_v44fb"]
+[ext_resource type="AudioStream" uid="uid://cpe22k0l37tai" path="res://assets/Sound.mp3" id="8_7vca5"]
+
+[node name="MusicManager" type="Node"]
+script = ExtResource("1_qy4uu")
+title_music = ExtResource("2_v44fb")
+ending_cutscene_music = ExtResource("3_vjtyv")
+main_hub_music = ExtResource("2_66u46")
+ancient_egypt_music = ExtResource("3_jyrmp")
+forest_cluster_music = ExtResource("4_aafed")
+laser_map_music = ExtResource("2_yn0t2")
+world2_music = ExtResource("6_v44fb")
+farming_cluster_music = ExtResource("8_7vca5")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bxtjvedolln3u"]
+
+[ext_resource type="Script" uid="uid://dvwica3tashgj" path="res://inventory/inventory_item.gd" id="1_ldho2"]
+[ext_resource type="Texture2D" uid="uid://ejcn4io7auvm" path="res://art/Pixel Potion Pack - FINISHED/ALL Potions - First Frame/Bubbly Brew Bottle - BLUE - 0000.png" id="2_ldho2"]
+
+[resource]
+script = ExtResource("1_ldho2")
+name = "blue elixir"
+texture = ExtResource("2_ldho2")
+metadata/_custom_type_script = "uid://dvwica3tashgj"

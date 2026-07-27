@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3wmcv0n44nwa"]
+
+[ext_resource type="Script" uid="uid://5ytpruj7tjge" path="res://scripts/weather_panel.gd" id="1_e42ht"]
+[ext_resource type="Texture2D" uid="uid://exd28gfhlckn" path="res://art/Screenshot 2026-02-09 at 9.12.26 PM.png" id="2_hab87"]
+[ext_resource type="Texture2D" uid="uid://ca0jnpy7uuqy0" path="res://art/Screenshot 2026-02-09 at 9.13.44 PM.png" id="3_dl2gq"]
+[ext_resource type="Texture2D" uid="uid://deta0jp2mycas" path="res://art/Screenshot 2026-02-09 at 9.13.55 PM.png" id="4_aodub"]
+[ext_resource type="Texture2D" uid="uid://ctj7kqqx3pyip" path="res://art/Screenshot 2026-02-09 at 9.15.11 PM.png" id="5_sy80q"]
+[ext_resource type="Texture2D" uid="uid://c8rnfu1q4jkb5" path="res://art/Screenshot 2026-02-09 at 9.15.16 PM.png" id="6_fw0k5"]
+
+[node name="weatherPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_e42ht")
+tex_sunny = ExtResource("2_hab87")
+tex_blizzard = ExtResource("3_dl2gq")
+tex_rainy = ExtResource("4_aodub")
+tex_heatwave = ExtResource("5_sy80q")
+tex_normal = ExtResource("6_fw0k5")
+
+[node name="WeatherLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CameraFeed" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -29.0
+offset_top = -30.0
+offset_right = 11.0
+offset_bottom = 10.0
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -1.0
+offset_right = 36.0
+offset_bottom = 22.0

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cydrx01lq8nds"]
+
+[ext_resource type="Script" uid="uid://dvwica3tashgj" path="res://inventory/inventory_item.gd" id="1_7sndd"]
+[ext_resource type="Texture2D" uid="uid://cn2uxwfa2pngx" path="res://inventory/lettuce_seed-removebg-preview.png" id="2_cqwsh"]
+
+[resource]
+script = ExtResource("1_7sndd")
+name = "Lettuce Seed"
+texture = ExtResource("2_cqwsh")
+metadata/_custom_type_script = "uid://dvwica3tashgj"

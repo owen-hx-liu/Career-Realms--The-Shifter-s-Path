@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cnq2a6kljgjnl"]
+
+[ext_resource type="Script" uid="uid://dvwica3tashgj" path="res://inventory/inventory_script/inventory_item.gd" id="1_da38x"]
+[ext_resource type="Texture2D" uid="uid://cq4acl1h5hfmy" path="res://art/Copilot_20260120_215553-removebg-preview.png" id="2_c0q3x"]
+
+[resource]
+script = ExtResource("1_da38x")
+name = "Star"
+texture = ExtResource("2_c0q3x")
+metadata/_custom_type_script = "uid://dvwica3tashgj"

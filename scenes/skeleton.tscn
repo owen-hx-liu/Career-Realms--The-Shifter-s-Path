@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtac8vd24t2dt"]
+
+[ext_resource type="Texture2D" uid="uid://ba6td3uc5i7m2" path="res://art/Screenshot_2026-04-09_at_9.30.22_PM-removebg-preview.png" id="1_pbvs3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbvs3"]
+
+[node name="skeleton" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(2, 2.072)
+texture = ExtResource("1_pbvs3")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+position = Vector2(-21, -27)
+scale = Vector2(2.8, 2.7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(7.5, 10.715)
+shape = SubResource("RectangleShape2D_pbvs3")

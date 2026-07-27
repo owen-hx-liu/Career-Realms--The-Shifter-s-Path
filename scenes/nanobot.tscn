@@ -1,0 +1,100 @@
+[gd_scene load_steps=14 format=3 uid="uid://7sd02aq3pmsn"]
+
+[ext_resource type="Script" path="res://nanobot.gd" id="1_yi3e1"]
+[ext_resource type="Texture2D" uid="uid://wprlx2mc45ii" path="res://art/free-drones-pack-pixel-art/1 Drones/1/Idle.png" id="2_fyy4b"]
+[ext_resource type="Texture2D" uid="uid://crxcwbrwbbdi7" path="res://art/free-drones-pack-pixel-art/1 Drones/1/Walk.png" id="3_qxkfq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wl0mx"]
+atlas = ExtResource("2_fyy4b")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e72ha"]
+atlas = ExtResource("2_fyy4b")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib0dq"]
+atlas = ExtResource("2_fyy4b")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxd2s"]
+atlas = ExtResource("2_fyy4b")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjiga"]
+atlas = ExtResource("3_qxkfq")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thp1x"]
+atlas = ExtResource("3_qxkfq")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfkqa"]
+atlas = ExtResource("3_qxkfq")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkxx2"]
+atlas = ExtResource("3_qxkfq")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rnfms"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wl0mx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e72ha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib0dq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxd2s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjiga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thp1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfkqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkxx2")
+}],
+"loop": true,
+"name": &"move",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fyy4b"]
+radius = 9.0
+height = 18.0
+
+[node name="Nanobot" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_yi3e1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rnfms")
+animation = &"move"
+frame = 3
+frame_progress = 0.443894
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CapsuleShape2D_fyy4b")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(40, 6)
+offset_left = -20.0
+offset_top = -48.0
+offset_right = 20.0
+offset_bottom = -21.0
+max_value = 15.0

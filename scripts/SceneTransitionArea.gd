@@ -11,11 +11,15 @@ func _on_body_entered(body):
 		global.next_scene_path = target_scene_path
 		global.next_player_x = spawn_position.x
 		global.next_player_y = spawn_position.y
+		print("Setting spawn to:", spawn_position)
 
+		
+		
 		var transition = preload("res://scenes/LevelTransition.tscn").instantiate()
 		transition.target_scene_path = target_scene_path
 		transition.player_spawn_position = spawn_position
 		get_tree().get_root().add_child(transition)
+		
 
 
 

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cpsns4wxg7bjl"]
+
+[ext_resource type="Script" uid="uid://dvwica3tashgj" path="res://inventory/inventory_script/inventory_item.gd" id="1_bcsl6"]
+[ext_resource type="Texture2D" uid="uid://v14vmdd0se8x" path="res://inventory/green_bean_seed-removebg-preview.png" id="2_25pt0"]
+
+[resource]
+script = ExtResource("1_bcsl6")
+name = "Green Bean Seed"
+texture = ExtResource("2_25pt0")
+metadata/_custom_type_script = "uid://dvwica3tashgj"

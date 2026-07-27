@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxcunc2j5dx41"]
+
+[ext_resource type="Script" path="res://scripts/quests/nanobot_quest.gd" id="1_nbq"]
+
+[node name="NanobotQuest" type="Node2D"]
+script = ExtResource("1_nbq")

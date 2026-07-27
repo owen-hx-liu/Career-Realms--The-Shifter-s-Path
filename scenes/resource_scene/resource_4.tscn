@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvvrmjxyjxcv6"]
+
+[ext_resource type="Script" uid="uid://ctsrdeybd12h1" path="res://scripts/resource_script/resource4.gd" id="1_xl6dq"]
+[ext_resource type="Texture2D" uid="uid://degmyndllnsbi" path="res://art/OpenmonItemIcons.png" id="2_5uh5a"]
+[ext_resource type="Resource" uid="uid://cq8ja2tiuvam0" path="res://inventory/items/mushroom.tres" id="2_6jxu7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jxu7"]
+atlas = ExtResource("2_5uh5a")
+region = Rect2(253, 99, 31, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7l0uk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jxu7")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vf1bh"]
+radius = 20.025
+
+[node name="resource4" type="Node2D"]
+script = ExtResource("1_xl6dq")
+item = ExtResource("2_6jxu7")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_7l0uk")
+animation = &"new_animation"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_vf1bh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-4, -4, 0, -11, 13, -8, 12, 3, 11, 10, 7, 13, 2, 10, 1, 4, -4, 5, -7, 1)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

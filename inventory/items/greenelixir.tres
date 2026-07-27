@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bsbaa1nh06di5"]
+
+[ext_resource type="Script" uid="uid://dvwica3tashgj" path="res://inventory/inventory_item.gd" id="1_tr4vs"]
+[ext_resource type="Texture2D" uid="uid://oxk0pchour8d" path="res://art/Pixel Potion Pack - FINISHED/ALL Potions - First Frame/Big Vial - GREEN - 0000.png" id="2_tr4vs"]
+
+[resource]
+script = ExtResource("1_tr4vs")
+name = "green elixir"
+texture = ExtResource("2_tr4vs")
+metadata/_custom_type_script = "uid://dvwica3tashgj"

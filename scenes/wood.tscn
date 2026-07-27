@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt7bde1jnqhu2"]
+
+[ext_resource type="Texture2D" uid="uid://mesfpodk4mpb" path="res://art/Screenshot 2026-05-24 at 9.12.20 PM.png" id="1_y25wi"]
+
+[node name="wood" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_y25wi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

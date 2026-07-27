@@ -1,0 +1,45 @@
+# Godot
+.godot/
+android/
+export_presets.cfg
+*.translation
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Art / binary assets (kept out of the repo) ---
+art/
+assets/
+Super_Retro_World_Interior_pack_week42/
+
+# Loose sprite sheets, screenshots and their Godot import stubs
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.svg
+*.aseprite
+*.ase
+*.psd
+*.import
+
+# Audio
+*.mp3
+*.ogg
+*.wav
+
+# Downloaded asset packs
+*.rar
+*.zip
+*.7z
+
+# Nested clones of other repos that live inside this folder
+FBLA-Game-25-26/
+Career Realms- The Shifter's Path/
+
+# Generated output
+output/
+tmp/

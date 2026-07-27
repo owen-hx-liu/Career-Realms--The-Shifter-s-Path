@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dwdpk8ldek7qa"]
+
+[ext_resource type="Script" uid="uid://dvwica3tashgj" path="res://inventory/inventory_item.gd" id="1_4i7fv"]
+[ext_resource type="Texture2D" uid="uid://6ae4qopmnfb6" path="res://inventory/sunflower_seed-removebg-preview.png" id="2_5qbqs"]
+
+[resource]
+script = ExtResource("1_4i7fv")
+name = "Sunflower Seed"
+texture = ExtResource("2_5qbqs")
+metadata/_custom_type_script = "uid://dvwica3tashgj"

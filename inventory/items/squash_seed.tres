@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cgrn8gx43blg1"]
+
+[ext_resource type="Script" uid="uid://dvwica3tashgj" path="res://inventory/inventory_item.gd" id="1_f3ns7"]
+[ext_resource type="Texture2D" uid="uid://babdfp2lcblv5" path="res://inventory/squash_seed-removebg-preview.png" id="2_yagss"]
+
+[resource]
+script = ExtResource("1_f3ns7")
+name = "Squash Seed"
+texture = ExtResource("2_yagss")
+metadata/_custom_type_script = "uid://dvwica3tashgj"

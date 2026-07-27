@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvivsmjchhq4d"]
+
+[ext_resource type="Texture2D" uid="uid://dohar6jiud52t" path="res://art/Gemini_Generated_Image_9a18a59a18a59a18-removebg-preview.png" id="1_wkahm"]
+
+[node name="x_ray" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wkahm")

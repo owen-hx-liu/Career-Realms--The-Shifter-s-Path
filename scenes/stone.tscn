@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://s3lu7palw76b"]
+
+[ext_resource type="Texture2D" uid="uid://cco8gw0a2aiqn" path="res://art/Screenshot 2026-05-24 at 9.12.01 PM.png" id="1_hmdus"]
+
+[node name="stone" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, 2)
+texture = ExtResource("1_hmdus")

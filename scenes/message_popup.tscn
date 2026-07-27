@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://dly3052q5fkow"]
+
+[ext_resource type="Script" uid="uid://cwxqyvraucno" path="res://scenes/quest_popup.gd" id="1_s5g13"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41i7r"]
+bg_color = Color(0.545098, 0.352941, 0.168627, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="MessagePopup" type="Node"]
+script = ExtResource("1_s5g13")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -21.0
+offset_right = 447.0
+offset_bottom = 146.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_41i7r")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 6.0
+offset_right = 404.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 11
+text = "Leader Quest: Lead your citizens through the maze while avoiding obstacles such as fires and sinkholes. If you hit the obstacle, you will be reset at the beginning. If a citizen hits an obstacle they will perish. Get to the exit fast! The fires will spread!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ContinueLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 108.0
+offset_right = 330.0
+offset_bottom = 131.0
+text = "Press SPACE to continue"
+horizontal_alignment = 1

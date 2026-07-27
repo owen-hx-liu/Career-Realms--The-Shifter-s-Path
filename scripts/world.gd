@@ -3,9 +3,9 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	global.update_camera()
-	$player.position = Vector2(global.next_player_x, global.next_player_y)
 	
+	$player.position = Vector2(global.next_player_x, global.next_player_y)
+	global.current_scene = get_tree().get_current_scene().name
 
 	
 

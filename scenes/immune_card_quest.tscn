@@ -1,0 +1,296 @@
+[gd_scene load_steps=2 format=3 uid="uid://dduiqviosi25a"]
+
+[ext_resource type="Script" uid="uid://cq3quj1nkfxqv" path="res://scenes/immune_card_quest.gd" id="1_p6o66"]
+
+[node name="ImmuneCardQuest" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p6o66")
+
+[node name="BackgroundLayer" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TopBar" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 10.0
+offset_right = -12.0
+offset_bottom = 66.0
+grow_horizontal = 2
+
+[node name="TitleLabel" type="Label" parent="TopBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "IMMUNE DEFENSE PROTOCOL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainArea" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 74.0
+offset_right = -12.0
+offset_bottom = -212.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="EnemyZone" type="Panel" parent="MainArea"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.92
+
+[node name="EnemyVBox" type="VBoxContainer" parent="MainArea/EnemyZone"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="EnemyTitle" type="Label" parent="MainArea/EnemyZone/EnemyVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "PATHOGEN THREATS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyScroll" type="ScrollContainer" parent="MainArea/EnemyZone/EnemyVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="EnemyCards" type="GridContainer" parent="MainArea/EnemyZone/EnemyVBox/EnemyScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="DeckZone" type="Panel" parent="MainArea"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.08
+
+[node name="DeckVBox" type="VBoxContainer" parent="MainArea/DeckZone"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="DeckTitle" type="Label" parent="MainArea/DeckZone/DeckVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "AVAILABLE IMMUNE CELLS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeckScroll" type="ScrollContainer" parent="MainArea/DeckZone/DeckVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="DeckCards" type="GridContainer" parent="MainArea/DeckZone/DeckVBox/DeckScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 3
+
+[node name="BottomBar" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -200.0
+offset_right = -12.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DraftedLabel" type="Label" parent="BottomBar"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = -240.0
+offset_bottom = 32.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 17
+text = "YOUR DEFENSE TEAM — Select 5 cells"
+vertical_alignment = 1
+
+[node name="DraftedCards" type="HBoxContainer" parent="BottomBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -68.0
+offset_right = 460.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="StartBattleButton" type="Button" parent="BottomBar"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -252.0
+offset_top = -56.0
+offset_right = -16.0
+offset_bottom = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 18
+text = "DEPLOY  ▶"
+
+[node name="ResultsOverlay" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DimBackground" type="ColorRect" parent="ResultsOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0156863, 0.0392157, 0.054902, 0.82)
+
+[node name="ResultsPanel" type="Panel" parent="ResultsOverlay"]
+custom_minimum_size = Vector2(640, 560)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -280.0
+offset_right = 320.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ResultsOverlay/ResultsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ResultsOverlay/ResultsPanel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="ResultsOverlay/ResultsPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "MISSION COMPLETE"
+horizontal_alignment = 1
+
+[node name="StarsRow" type="HBoxContainer" parent="ResultsOverlay/ResultsPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="ResultsOverlay/ResultsPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Score"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ResultsOverlay/ResultsPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AnalysisLabel" type="Label" parent="ResultsOverlay/ResultsPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "BATTLE ANALYSIS"
+horizontal_alignment = 1
+
+[node name="MatchupsScroll" type="ScrollContainer" parent="ResultsOverlay/ResultsPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(580, 230)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="MatchupsContainer" type="VBoxContainer" parent="ResultsOverlay/ResultsPanel/MarginContainer/VBoxContainer/MatchupsScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="ResultsOverlay/ResultsPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="RetryButton" type="Button" parent="ResultsOverlay/ResultsPanel/MarginContainer/VBoxContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(220, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "↻  RETRY"
+
+[node name="ContinueButton" type="Button" parent="ResultsOverlay/ResultsPanel/MarginContainer/VBoxContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(220, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "CONTINUE  ➤"

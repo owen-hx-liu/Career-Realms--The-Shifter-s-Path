@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6hj3pkr6jowa"]
+
+[ext_resource type="Script" uid="uid://bjhaj38kytl2w" path="res://scripts/control_panel.gd" id="1_fab17"]
+
+[node name="ControlPanel" type="Control" node_paths=PackedStringArray("f1_heat", "f1_cool", "f1_off", "f2_heat", "f2_cool", "f2_off", "f3_heat", "f3_cool", "f3_off")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fab17")
+f1_heat = NodePath("Background/HBoxContainer/Fan1_Control/Button_Heat")
+f1_cool = NodePath("Background/HBoxContainer/Fan1_Control/Button_Cool")
+f1_off = NodePath("Background/HBoxContainer/Fan1_Control/Button_Off")
+f2_heat = NodePath("Background/HBoxContainer/Fan2_Control/Button_Heat")
+f2_cool = NodePath("Background/HBoxContainer/Fan2_Control/Button_Cool")
+f2_off = NodePath("Background/HBoxContainer/Fan2_Control/Button_Off")
+f3_heat = NodePath("Background/HBoxContainer/Fan3_Control/Button_Heat")
+f3_cool = NodePath("Background/HBoxContainer/Fan3_Control/Button_Cool")
+f3_off = NodePath("Background/HBoxContainer/Fan3_Control/Button_Off")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 0
+
+[node name="Title" type="Label" parent="Background"]
+layout_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background"]
+layout_mode = 0
+offset_left = -117.0
+offset_top = -72.0
+offset_right = 125.0
+offset_bottom = 56.0
+
+[node name="Fan1_Control" type="VBoxContainer" parent="Background/HBoxContainer"]
+layout_mode = 2
+
+[node name="Fan 1" type="Label" parent="Background/HBoxContainer/Fan1_Control"]
+layout_mode = 2
+
+[node name="Button_Heat" type="Button" parent="Background/HBoxContainer/Fan1_Control"]
+layout_mode = 2
+text = "fan1heat"
+
+[node name="Button_Cool" type="Button" parent="Background/HBoxContainer/Fan1_Control"]
+layout_mode = 2
+text = "fan1cool"
+
+[node name="Button_Off" type="Button" parent="Background/HBoxContainer/Fan1_Control"]
+layout_mode = 2
+text = "fan1off"
+
+[node name="Fan2_Control" type="VBoxContainer" parent="Background/HBoxContainer"]
+layout_mode = 2
+
+[node name="Fan 2" type="Label" parent="Background/HBoxContainer/Fan2_Control"]
+layout_mode = 2
+
+[node name="Button_Heat" type="Button" parent="Background/HBoxContainer/Fan2_Control"]
+layout_mode = 2
+text = "fan2heat"
+
+[node name="Button_Cool" type="Button" parent="Background/HBoxContainer/Fan2_Control"]
+layout_mode = 2
+text = "fan2cool"
+
+[node name="Button_Off" type="Button" parent="Background/HBoxContainer/Fan2_Control"]
+layout_mode = 2
+text = "fan2off"
+
+[node name="Fan3_Control" type="VBoxContainer" parent="Background/HBoxContainer"]
+layout_mode = 2
+
+[node name="Fan 3" type="Label" parent="Background/HBoxContainer/Fan3_Control"]
+layout_mode = 2
+
+[node name="Button_Heat" type="Button" parent="Background/HBoxContainer/Fan3_Control"]
+layout_mode = 2
+text = "fan3heat"
+
+[node name="Button_Cool" type="Button" parent="Background/HBoxContainer/Fan3_Control"]
+layout_mode = 2
+text = "fan3cool"
+
+[node name="Button_Off" type="Button" parent="Background/HBoxContainer/Fan3_Control"]
+layout_mode = 2
+text = "fan3off"
+
+[node name="CloseLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_right = 64.0
+offset_bottom = 23.0

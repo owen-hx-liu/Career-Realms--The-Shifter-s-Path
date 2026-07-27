@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://sum2n0x0f36d"]
+
+[ext_resource type="Script" uid="uid://dvwica3tashgj" path="res://inventory/inventory_item.gd" id="1_emrh7"]
+[ext_resource type="Texture2D" uid="uid://b6rs6b5m7gqc3" path="res://inventory/pineapple_seed-removebg-preview.png" id="2_ht2pn"]
+
+[resource]
+script = ExtResource("1_emrh7")
+name = "Pineapple Seed"
+texture = ExtResource("2_ht2pn")
+metadata/_custom_type_script = "uid://dvwica3tashgj"

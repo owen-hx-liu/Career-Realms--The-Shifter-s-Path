@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://csq7jrbmy77jo"]
+
+[ext_resource type="Script" uid="uid://dvwica3tashgj" path="res://inventory/inventory_item.gd" id="1_bvir1"]
+[ext_resource type="Texture2D" uid="uid://dtlka8gln7k8b" path="res://inventory/pepper_seed-removebg-preview.png" id="2_x2afj"]
+
+[resource]
+script = ExtResource("1_bvir1")
+name = "Pepper Seed"
+texture = ExtResource("2_x2afj")
+metadata/_custom_type_script = "uid://dvwica3tashgj"

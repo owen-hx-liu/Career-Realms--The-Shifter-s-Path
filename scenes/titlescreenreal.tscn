@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dksqdy268e365"]
+
+[ext_resource type="Script" uid="uid://dfquj0praoamy" path="res://scripts/core/titlescreen.gd" id="1_fbsux"]
+[ext_resource type="FontFile" uid="uid://bk8spmrsunedy" path="res://art/Cute_Fantasy_Free2/Outdoor decoration/determination/determination.ttf" id="2_font"]
+
+[node name="TitleScreen" type="CanvasLayer"]
+script = ExtResource("1_fbsux")
+custom_font = ExtResource("2_font")

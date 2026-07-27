@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://cycd2yvr1d2wb"]
+
+[ext_resource type="Script" uid="uid://d07rii34d6qp3" path="res://scripts/color_filter.gd" id="1_p3ohy"]
+[ext_resource type="Texture2D" uid="uid://tt22n65cw7jt" path="res://art/433cce76-9488-4cc2-b8cb-cf2fdf6b2b37-2-removebg-preview.png" id="2_ucao7"]
+[ext_resource type="Texture2D" uid="uid://dwp7jwkhegbmt" path="res://art/c204281a-dd9c-4890-9c2e-627521686961-removebg-preview.png" id="3_yd8w6"]
+[ext_resource type="Texture2D" uid="uid://0uxf4104emkv" path="res://art/craftpix-net-200380-free-pixel-art-plants-for-farm/f7dc1930-eace-4931-92d5-abd149ac0deb-removebg-preview.png" id="4_5it8q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3ohy"]
+size = Vector2(9, 90)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p3ohy"]
+radius = 84.0536
+
+[node name="color_filter" type="StaticBody2D"]
+script = ExtResource("1_p3ohy")
+filter_textures = Array[Texture2D]([ExtResource("2_ucao7"), ExtResource("3_yd8w6"), ExtResource("4_5it8q")])
+visual_colors = Array[Color]([Color(1, 0, 0, 1), Color(1, 0.647059, 0, 1), Color(0, 1, 1, 1)])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.999999, 0)
+scale = Vector2(0.10061, 0.327703)
+texture = ExtResource("2_ucao7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_p3ohy")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-1, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_p3ohy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

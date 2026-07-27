@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3hw7lxt7onhl"]
+
+[ext_resource type="Script" uid="uid://b7yoevjke847k" path="res://scenes/location_info_popup.gd" id="1_gysil"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8l5w5"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="LocationInfoPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_gysil")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 150.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8l5w5")
+
+[node name="InfoLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 380.0
+offset_bottom = 100.0
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CloseButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 10.0
+offset_right = 390.0
+offset_bottom = 41.0
+text = "X"
+
+[connection signal="pressed" from="Panel/CloseButton" to="." method="_on_close_button_pressed"]

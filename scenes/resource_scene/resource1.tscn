@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://bng6rl1ithm07"]
+
+[ext_resource type="Script" uid="uid://dwixeipl4xahu" path="res://scripts/resource_script/resource_1.gd" id="2_678hu"]
+[ext_resource type="Texture2D" uid="uid://bp3odpu7ymw6c" path="res://art/World of Solaria Marketplace Update 05 DEMO/Cute_Fantasy_Free/Outdoor decoration/Outdoor_Decor_Free.png" id="2_rkxfg"]
+[ext_resource type="Resource" uid="uid://sni611a0jils" path="res://inventory/items/carrot.tres" id="2_wpngu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7w21g"]
+radius = 21.0238
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpngu"]
+atlas = ExtResource("2_rkxfg")
+region = Rect2(64, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_axdv1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpngu")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="resource1" type="Node2D"]
+z_index = 1
+script = ExtResource("2_678hu")
+item = ExtResource("2_wpngu")
+
+[node name="pickable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickable_area"]
+shape = SubResource("CircleShape2D_7w21g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="pickable_area"]
+z_index = 1
+position = Vector2(0, 9.53674e-07)
+scale = Vector2(1.53125, 1.125)
+sprite_frames = SubResource("SpriteFrames_axdv1")
+animation = &"new_animation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-9, 0, 3, -10, 13, -8, 12, 3, -3, 10, -7, 10, -10, 5)
+
+[connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]
+[connection signal="body_exited" from="pickable_area" to="." method="_on_pickable_area_body_exited"]

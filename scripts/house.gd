@@ -1,9 +1,9 @@
 extends Node2D
 
 func _ready():
-	global.update_camera()
-	$player.position = Vector2(global.next_player_x, global.next_player_y)
-
+	
+	
+	global.current_scene = get_tree().get_current_scene().name
 
 
 

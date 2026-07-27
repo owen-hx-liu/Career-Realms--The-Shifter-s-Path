@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://m04s5hpfkkwu"]
+
+[ext_resource type="Texture2D" uid="uid://degmyndllnsbi" path="res://art/OpenmonItemIcons.png" id="1_2v4gt"]
+[ext_resource type="Script" path="res://scripts/resource2.gd" id="1_q8v2h"]
+[ext_resource type="Resource" uid="uid://b6mr3pu1nqib5" path="res://inventory/items/blueberry.tres" id="2_gsfgb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8v2h"]
+atlas = ExtResource("1_2v4gt")
+region = Rect2(192, 34, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gsfgb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8v2h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gsfgb"]
+radius = 25.0
+
+[node name="resource2" type="Node2D"]
+script = ExtResource("1_q8v2h")
+item = ExtResource("2_gsfgb")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_gsfgb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_gsfgb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-11, -6, -2, -16, 11, -6, 10, 3, 1, 8, -5, 6, -9, 3)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

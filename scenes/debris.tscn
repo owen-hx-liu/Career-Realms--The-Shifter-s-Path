@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcval8rx5lag0"]
+
+[ext_resource type="Script" uid="uid://cthglwvevmtxe" path="res://scenes/debris.gd" id="1_s4vdx"]
+[ext_resource type="Texture2D" uid="uid://dpgly7ahl7aye" path="res://assets/generated/dyson/asteroid_1.png" id="1_wkiee"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s4vdx"]
+radius = 40.0
+
+[node name="Debris" type="Area2D"]
+script = ExtResource("1_s4vdx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wkiee")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_s4vdx")

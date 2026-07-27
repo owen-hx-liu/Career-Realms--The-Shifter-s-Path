@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://bculws2k1rxg0"]
+
+[ext_resource type="Texture2D" uid="uid://ng0jew3o28tq" path="res://art/inventory-slot.png" id="1_5p55f"]
+[ext_resource type="Texture2D" uid="uid://c008j3n4euk8c" path="res://art/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Icon/Home.png" id="2_r67kn"]
+
+[node name="control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 648.0
+texture = ExtResource("1_5p55f")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_right = 385.0
+offset_bottom = 215.0
+scale = Vector2(3, 3)
+text = "ARROW KEYS - MOVEMENT
+F - FLOOD START
+P - RESOURCE PICKUP
+C - CANAL PLACEMENT
+T - TALK
+E - COLLECT
+I - OPEN INVENTORY
+R - CRAFT TABLE
+ENTER - CONFIRM"
+horizontal_alignment = 1
+
+[node name="Button3" type="Button" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 129.0
+offset_bottom = 123.0
+icon = ExtResource("2_r67kn")
+flat = true
+expand_icon = true

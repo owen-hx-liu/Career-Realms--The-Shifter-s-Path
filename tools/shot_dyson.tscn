@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdy50nshot01"]
+
+[ext_resource type="Script" path="res://tools/shot_dyson.gd" id="1_shot"]
+
+[node name="ShotDyson" type="Node"]
+script = ExtResource("1_shot")

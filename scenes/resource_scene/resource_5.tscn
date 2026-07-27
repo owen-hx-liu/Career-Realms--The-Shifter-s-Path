@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://bckesy6y7xiaa"]
+
+[ext_resource type="Script" uid="uid://dl0cs0d0ay4ey" path="res://scripts/resource_script/resource5.gd" id="1_k6wsp"]
+[ext_resource type="Resource" uid="uid://c4ue8umnjn7r" path="res://inventory/items/goldenegg.tres" id="2_dyf1n"]
+[ext_resource type="Texture2D" uid="uid://degmyndllnsbi" path="res://art/OpenmonItemIcons.png" id="2_kkukw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dyf1n"]
+radius = 20.025
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7qse"]
+atlas = ExtResource("2_kkukw")
+region = Rect2(98, 99, 28, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_adahv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7qse")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="resource5" type="Node2D"]
+script = ExtResource("1_k6wsp")
+item = ExtResource("2_dyf1n")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_dyf1n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_adahv")
+animation = &"new_animation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-6, -6, 0, -12, 8, -3, 8, 9, 0, 12, -7, 10, -9, 4)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

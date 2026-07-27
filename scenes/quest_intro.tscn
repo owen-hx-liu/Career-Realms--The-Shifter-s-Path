@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp6fu7bdka7hk"]
+
+[ext_resource type="Script" uid="uid://cjbt7vgohph5n" path="res://quest_intro.gd" id="1_gnnu2"]
+[ext_resource type="Texture2D" uid="uid://cd24ls4y7qsj5" path="res://art/Screenshot_2026-01-05_at_9.32.55_PM-removebg-preview.png" id="2_rfb2j"]
+
+[node name="QuestIntro" type="Node2D"]
+script = ExtResource("1_gnnu2")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_right = 400.0
+offset_bottom = 200.0
+texture = ExtResource("2_rfb2j")
+
+[node name="MainText" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 12.0
+offset_right = 367.0
+offset_bottom = 135.0
+
+[node name="ContinuePrompt" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 137.0
+offset_right = 329.0
+offset_bottom = 170.0

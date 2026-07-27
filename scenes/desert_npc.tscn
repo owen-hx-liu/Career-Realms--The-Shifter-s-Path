@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbxwyv2baoja7"]
+
+[ext_resource type="Texture2D" uid="uid://ks6bfqg0ff71" path="res://art/Generic Male NPCs.png" id="1_3v1h7"]
+[ext_resource type="Script" uid="uid://bp4sgqv072qfk" path="res://scripts/desert_npc.gd" id="1_ew1a8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v1h7"]
+atlas = ExtResource("1_3v1h7")
+region = Rect2(240, 0, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew1a8"]
+atlas = ExtResource("1_3v1h7")
+region = Rect2(320, 0, 80, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0xncd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v1h7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ew1a8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmdt1"]
+size = Vector2(10, 19)
+
+[node name="desert_npc" type="CharacterBody2D"]
+script = ExtResource("1_ew1a8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(14, 2)
+scale = Vector2(0.3625, 0.295833)
+sprite_frames = SubResource("SpriteFrames_0xncd")
+animation = &"idle"
+frame_progress = 0.417026
+speed_scale = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14, 6)
+shape = SubResource("RectangleShape2D_qmdt1")

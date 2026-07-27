@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bww7ibambwal0"]
+
+[ext_resource type="Script" uid="uid://dvwica3tashgj" path="res://inventory/inventory_item.gd" id="1_7vkmk"]
+[ext_resource type="Texture2D" uid="uid://bda33v48xsrit" path="res://art/Pixel Potion Pack - FINISHED/ALL Potions - First Frame/Bubbly Brew Bottle - GOLD - 0000.png" id="2_7vkmk"]
+
+[resource]
+script = ExtResource("1_7vkmk")
+name = "golden elixir"
+texture = ExtResource("2_7vkmk")
+metadata/_custom_type_script = "uid://dvwica3tashgj"

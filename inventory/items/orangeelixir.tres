@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dfepwvf8low3f"]
+
+[ext_resource type="Script" uid="uid://dvwica3tashgj" path="res://inventory/inventory_item.gd" id="1_b2caq"]
+[ext_resource type="Texture2D" uid="uid://biyltt2fjp6wn" path="res://art/Pixel Potion Pack - FINISHED/ALL Potions - First Frame/Bubbly Brew Bottle - ORANGE - 0000.png" id="2_b2caq"]
+
+[resource]
+script = ExtResource("1_b2caq")
+name = "orange elixir"
+texture = ExtResource("2_b2caq")
+metadata/_custom_type_script = "uid://dvwica3tashgj"

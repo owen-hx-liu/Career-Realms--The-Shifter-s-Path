@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/core/GlobalSettingsMenu.gd" id="1_hfr21"]
+
+[node name="GlobalSettingsMenu" type="CanvasLayer"]
+script = ExtResource("1_hfr21")

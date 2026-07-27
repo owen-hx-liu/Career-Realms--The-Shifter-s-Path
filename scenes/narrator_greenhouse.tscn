@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjqw6irv3exj0"]
+
+[ext_resource type="Script" uid="uid://dxoj36loa2fq" path="res://scripts/narrator_greenhouse.gd" id="1_0j4w1"]
+
+[node name="narrator_greenhouse" type="CanvasLayer"]
+script = ExtResource("1_0j4w1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MessageLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+bbcode_enabled = true
+
+[node name="PromptLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+bbcode_enabled = true

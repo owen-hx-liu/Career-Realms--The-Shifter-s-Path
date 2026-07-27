@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://vsyysiscob3q"]
+
+[ext_resource type="Texture2D" uid="uid://bqffhnyhmx87g" path="res://art/Screenshot_2026-05-24_at_9.23.07_PM-removebg-preview.png" id="1_oea2l"]
+
+[node name="x_ray_frame" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 3)
+scale = Vector2(5.03834, 4.40511)
+texture = ExtResource("1_oea2l")

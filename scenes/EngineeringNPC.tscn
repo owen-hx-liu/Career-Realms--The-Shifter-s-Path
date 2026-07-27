@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://cciy14bwwy2kg"]
+
+[ext_resource type="Script" uid="uid://b6kpn2ai1m616" path="res://scripts/engineering_npc.gd" id="1_1or4o"]
+[ext_resource type="PackedScene" uid="uid://cvpv54pxhc44t" path="res://scenes/DialogueBox.tscn" id="2_38qeo"]
+[ext_resource type="Texture2D" uid="uid://cier88ms4sgbv" path="res://art/World of Solaria Marketplace Update 05 DEMO/Free Pixel Fantasy Chronicles - RPG Asset Pack/sprites/free_player.png" id="2_dnrmh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38qeo"]
+atlas = ExtResource("2_dnrmh")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eceue"]
+atlas = ExtResource("2_dnrmh")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr678"]
+atlas = ExtResource("2_dnrmh")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_derwx"]
+atlas = ExtResource("2_dnrmh")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufneg"]
+atlas = ExtResource("2_dnrmh")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fu5vh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38qeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eceue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr678")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_derwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufneg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_acmxo"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h84lt"]
+radius = 19.0
+
+[node name="EngineeringNpc" type="CharacterBody2D"]
+script = ExtResource("1_1or4o")
+dialogue_box_scene = ExtResource("2_38qeo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fu5vh")
+animation = &"idle"
+frame_progress = 0.492872
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_acmxo")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_h84lt")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

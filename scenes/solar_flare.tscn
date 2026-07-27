@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cydbh7gt2w2u3"]
+
+[ext_resource type="Script" uid="uid://dylqi41cor8ld" path="res://scenes/solar_flare.gd" id="1_wv12f"]
+
+[node name="Solar Flare" type="Node2D"]
+script = ExtResource("1_wv12f")
+
+[node name="Line2D" type="Line2D" parent="."]

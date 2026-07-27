@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://qrob3cln3vy0"]
+
+[ext_resource type="Texture2D" uid="uid://cikc6j4k7l0n1" path="res://art/Cute_Fantasy_Free/fire/Group 6 - 3/Group 6 - 3.png" id="1_52nqi"]
+[ext_resource type="Script" uid="uid://c08brr6hoypw7" path="res://scenes/fire.gd" id="1_xqmqg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqmqg"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5mbl"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rach5"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txieb"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l61p"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10wrr"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_theev"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l77w"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(112, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ajlmw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqmqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5mbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rach5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txieb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l61p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10wrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_theev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3l77w")
+}],
+"loop": true,
+"name": &"burn",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqmqg"]
+size = Vector2(15, 23)
+
+[node name="fire" type="Node2D"]
+script = ExtResource("1_xqmqg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ajlmw")
+animation = &"burn"
+frame_progress = 0.758267
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 4.5)
+shape = SubResource("RectangleShape2D_xqmqg")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

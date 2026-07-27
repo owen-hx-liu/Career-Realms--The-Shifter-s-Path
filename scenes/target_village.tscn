@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cevgofv3c8cem"]
+
+[ext_resource type="Texture2D" uid="uid://uibnqhxag4mu" path="res://art/Screenshot_2026-04-19_at_9.28.24_PM-removebg-preview.png" id="1_l0lel"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwuqu"]
+size = Vector2(246, 259)
+
+[node name="target_village" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_l0lel")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(0, 4.5)
+scale = Vector2(0.7, 0.7)
+shape = SubResource("RectangleShape2D_lwuqu")

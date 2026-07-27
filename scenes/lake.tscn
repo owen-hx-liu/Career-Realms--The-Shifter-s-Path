@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://blukeh5o3lyy"]
+
+[ext_resource type="Texture2D" uid="uid://8oj1chvra1lm" path="res://art/Pixel Lands Forest Demo/forest_demo_terrain.png" id="1_31850"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fkw7t"]
+texture = ExtResource("1_31850")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+0:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4p5pm"]
+sources/0 = SubResource("TileSetAtlasSource_fkw7t")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31850"]
+size = Vector2(87, 86)
+
+[node name="lake" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-40, -40)
+tile_set = SubResource("TileSet_4p5pm")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 327680, 1, 65536, 327680, 2, 131072, 327680, 2, 196608, 327680, 2, 262144, 327680, 3, 262145, 393216, 3, 262146, 393216, 3, 262147, 393216, 3, 262148, 458752, 3, 196612, 458752, 2, 131076, 458752, 2, 65540, 458752, 2, 4, 458752, 1, 2, 393216, 1, 1, 393216, 1, 3, 393216, 1, 131074, 589824, 0, 65539, 655360, 0, 196610, 524288, 0, 65537, 393216, 2, 65538, 393216, 2, 131073, 393216, 2, 196609, 393216, 2, 131075, 393216, 2, 196611, 393216, 2)
+
+[node name="Area2D" type="Area2D" parent="TileMap"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D"]
+position = Vector2(39.5, 40)
+shape = SubResource("RectangleShape2D_31850")

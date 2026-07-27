@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=3 uid="uid://bqb5jq1nbrg1i"]
+
+[ext_resource type="Script" uid="uid://sds3mmc46ufx" path="res://scenes/sinkhole.gd" id="1_g4f5y"]
+[ext_resource type="Texture2D" uid="uid://ywc2nlcmo8ec" path="res://art/Cute_Fantasy_Free/Sinkhole/Sinkhole.png" id="1_iwupa"]
+[ext_resource type="Texture2D" uid="uid://b73131vo8xo0g" path="res://art/Cute_Fantasy_Free/Sinkhole/particle.png" id="2_fpbga"]
+
+[sub_resource type="Animation" id="Animation_uebaf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.01, 0.01)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_g4f5y"]
+resource_name = "expand"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.01, 0.01), Vector2(0.2, 0.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k7lno"]
+_data = {
+&"RESET": SubResource("Animation_uebaf"),
+&"expand": SubResource("Animation_g4f5y")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4f5y"]
+radius = 16.0
+
+[node name="Sinkhole" type="Node2D"]
+script = ExtResource("1_g4f5y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("1_iwupa")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 4
+texture = ExtResource("2_fpbga")
+one_shot = true
+explosiveness = 0.8
+direction = Vector2(0, -1)
+gravity = Vector2(0, 100)
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+scale_amount_min = 0.05
+scale_amount_max = 0.05
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_k7lno")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_g4f5y")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

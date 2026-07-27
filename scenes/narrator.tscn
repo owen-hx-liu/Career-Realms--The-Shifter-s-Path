@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://2fqv6wsd6ase"]
+
+[ext_resource type="Script" uid="uid://dyw72menurw3r" path="res://scripts/core/narrator.gd" id="1_2gd6b"]
+[ext_resource type="Texture2D" uid="uid://lhodvceu6ose" path="res://art/Cute_Fantasy_Free2/Outdoor decoration/old-paper-parchment-scroll-ancient-260nw-2272324681-removebg-preview.png" id="2_k84db"]
+[ext_resource type="FontFile" uid="uid://bk8spmrsunedy" path="res://art/Cute_Fantasy_Free2/Outdoor decoration/determination/determination.ttf" id="3_6tdr8"]
+
+[node name="Narrator" type="CanvasLayer"]
+script = ExtResource("1_2gd6b")
+
+[node name="DialogueBox" type="Control" parent="."]
+custom_minimum_size = Vector2(900, 300)
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -450.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+size_flags_vertical = 4
+
+[node name="Background" type="TextureRect" parent="DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.535
+anchor_top = 0.244
+anchor_right = 0.535
+anchor_bottom = 0.244
+offset_left = -256.5
+offset_top = -93.2
+offset_right = 256.5
+offset_bottom = 186.8
+texture = ExtResource("2_k84db")
+
+[node name="DialogueLabel" type="Label" parent="DialogueBox"]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 50.0
+offset_right = 643.0
+offset_bottom = 153.0
+pivot_offset = Vector2(40, 30)
+theme_override_colors/font_color = Color(0.429619, 4.2716e-07, 1.68458e-07, 1)
+theme_override_fonts/font = ExtResource("3_6tdr8")
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ContinueLabel" type="Label" parent="DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.512
+anchor_top = 0.228
+anchor_right = 0.512
+anchor_bottom = 0.228
+offset_left = -84.8
+offset_top = 84.6
+offset_right = 127.2
+offset_bottom = 110.6
+theme_override_font_sizes/font_size = 18
+text = "Press ENTER to continue"

@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://clg7sjf757ecb"]
+
+[ext_resource type="Script" uid="uid://bmhgneaklf348" path="res://scoresystem.gd" id="1_fdcbb"]
+[ext_resource type="Texture2D" uid="uid://ng0jew3o28tq" path="res://art/inventory-slot.png" id="2_rqy8d"]
+
+[node name="scoresystem" type="CanvasLayer"]
+script = ExtResource("1_fdcbb")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+layout_mode = 0
+offset_right = 458.0
+offset_bottom = 297.0
+texture = ExtResource("2_rqy8d")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/NinePatchRect"]
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 24.0
+scale = Vector2(3, 3)
+text = "Final Score"
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 62.0
+offset_right = 230.0
+offset_bottom = 179.0
+scale = Vector2(2, 2)
+text = "67"
+horizontal_alignment = 1
+vertical_alignment = 1

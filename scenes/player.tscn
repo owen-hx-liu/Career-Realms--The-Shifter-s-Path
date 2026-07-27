@@ -1,7 +1,7 @@
-[gd_scene load_steps=57 format=3 uid="uid://chfrhxqg255ho"]
+[gd_scene load_steps=57 format=3 uid="uid://caa3x7yxsbqf2"]
 
-[ext_resource type="Texture2D" uid="uid://cutn6ajkrxvcg" path="res://art/Cute_Fantasy_Free/Player/Player.png" id="1_3vyb7"]
-[ext_resource type="Script" uid="uid://du6jxrfn2p0k5" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://cutn6ajkrxvcg" path="res://art/World of Solaria Marketplace Update 05 DEMO/Cute_Fantasy_Free/Player/Player.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://du6jxrfn2p0k5" path="res://scripts/core/player.gd" id="1_g2els"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lx6x6"]
 atlas = ExtResource("1_3vyb7")
@@ -431,7 +431,6 @@ y_sort_enabled = true
 scale = Vector2(1, 0.96875)
 sprite_frames = SubResource("SpriteFrames_0qyn3")
 animation = &"side_walk"
-frame_progress = 0.900727
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = -1
@@ -442,8 +441,8 @@ shape = SubResource("CircleShape2D_g2els")
 zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = 0
-limit_right = 1599
-limit_bottom = 1599
+limit_right = 800
+limit_bottom = 800
 limit_smoothed = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
@@ -456,6 +455,17 @@ limit_left = 0
 limit_top = -4
 limit_right = 193
 limit_bottom = 127
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="forestcamera" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+limit_left = 0
+limit_top = 0
+limit_right = 1599
+limit_bottom = 1599
+limit_smoothed = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgy02ap30tj5e"]
+
+[ext_resource type="Script" uid="uid://c873dmgb3rytu" path="res://scripts/laserbeam.gd" id="1_ws5b4"]
+
+[node name="RayCast2D" type="RayCast2D"]
+target_position = Vector2(0, 51)
+collide_with_areas = true
+script = ExtResource("1_ws5b4")
+starting_direction = 1
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(0, -7)
+scale = Vector2(1, 1e-05)
+points = PackedVector2Array(0, 0, 0, 47)
+default_color = Color(0.423558, 0.842301, 0.505325, 1)
+begin_cap_mode = 2
+end_cap_mode = 2

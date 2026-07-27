@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://dxt0prnocll6t"]
+
+[ext_resource type="Texture2D" uid="uid://y1dt5uyhdx4q" path="res://art/Tech Dungeon Roguelite - Asset Pack (DEMO)/Tech Dungeon Roguelite - Asset Pack (DEMO)/Players/players blue x1.png" id="1_br0rw"]
+[ext_resource type="Script" uid="uid://dwl2oy3jgjfnh" path="res://scenes/robot.gd" id="1_ykvnc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykvnc"]
+atlas = ExtResource("1_br0rw")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i42o3"]
+atlas = ExtResource("1_br0rw")
+region = Rect2(0, 102, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcrfe"]
+atlas = ExtResource("1_br0rw")
+region = Rect2(32, 102, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwnim"]
+atlas = ExtResource("1_br0rw")
+region = Rect2(64, 102, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5kvo"]
+atlas = ExtResource("1_br0rw")
+region = Rect2(96, 102, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e20l1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykvnc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i42o3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcrfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwnim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5kvo")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ykvnc"]
+radius = 16.0312
+
+[node name="Robot" type="Node2D"]
+z_index = 10
+script = ExtResource("1_ykvnc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9.53674e-07, 9.53674e-07)
+scale = Vector2(2.15625, 2.19118)
+sprite_frames = SubResource("SpriteFrames_e20l1")
+animation = &"idle"
+frame_progress = 0.213212
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 14)
+shape = SubResource("CircleShape2D_ykvnc")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

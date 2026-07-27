@@ -1,0 +1,104 @@
+[gd_scene load_steps=16 format=3 uid="uid://bka0jersn1bi"]
+
+[ext_resource type="Texture2D" uid="uid://ng0jew3o28tq" path="res://art/inventory-slot.png" id="1_61b4f"]
+[ext_resource type="Script" uid="uid://d1lmw6fda8tet" path="res://scripts/Everything_in_healer_hut_script/crafttable_UI.gd" id="1_l2rha"]
+[ext_resource type="PackedScene" uid="uid://ddyhwk5xthbwo" path="res://scenes/Everything_in_healer_hut_scene/button.tscn" id="3_f8uje"]
+[ext_resource type="Texture2D" uid="uid://bjjajx12ig43l" path="res://art/Pixel Potion Pack - FINISHED/ALL Potions - First Frame/Big Vial - RED - 0000.png" id="4_alns3"]
+[ext_resource type="Resource" uid="uid://gc756capwtxe" path="res://inventory/items/redelixir.tres" id="4_vljwl"]
+[ext_resource type="Resource" uid="uid://da5xtlqaf1ch6" path="res://inventory/items/purpleelixir.tres" id="5_rqxbi"]
+[ext_resource type="Texture2D" uid="uid://d1j40d4xr3qjy" path="res://art/Pixel Potion Pack - FINISHED/ALL Potions - First Frame/Big Vial - PURPLE - 0000.png" id="6_45odj"]
+[ext_resource type="Resource" uid="uid://dfepwvf8low3f" path="res://inventory/items/orangeelixir.tres" id="6_chaxy"]
+[ext_resource type="Resource" uid="uid://bsbaa1nh06di5" path="res://inventory/items/greenelixir.tres" id="7_03c40"]
+[ext_resource type="Texture2D" uid="uid://biyltt2fjp6wn" path="res://art/Pixel Potion Pack - FINISHED/ALL Potions - First Frame/Bubbly Brew Bottle - ORANGE - 0000.png" id="8_38ufs"]
+[ext_resource type="Resource" uid="uid://bww7ibambwal0" path="res://inventory/items/goldenelixir.tres" id="8_74i4d"]
+[ext_resource type="Resource" uid="uid://bxtjvedolln3u" path="res://inventory/items/blueelixir.tres" id="9_alns3"]
+[ext_resource type="Texture2D" uid="uid://oxk0pchour8d" path="res://art/Pixel Potion Pack - FINISHED/ALL Potions - First Frame/Big Vial - GREEN - 0000.png" id="10_qhnwk"]
+[ext_resource type="Texture2D" uid="uid://bda33v48xsrit" path="res://art/Pixel Potion Pack - FINISHED/ALL Potions - First Frame/Bubbly Brew Bottle - GOLD - 0000.png" id="12_nkk3v"]
+[ext_resource type="Texture2D" uid="uid://ejcn4io7auvm" path="res://art/Pixel Potion Pack - FINISHED/ALL Potions - First Frame/Bubbly Brew Bottle - BLUE - 0000.png" id="14_fx2a7"]
+
+[node name="craftable_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 71.0
+offset_bottom = 70.0
+script = ExtResource("1_l2rha")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 71.0
+offset_bottom = 70.0
+texture = ExtResource("1_61b4f")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 99.0
+offset_bottom = 97.0
+scale = Vector2(0.7, 0.7)
+columns = 3
+metadata/_edit_group_ = true
+
+[node name="Button" parent="NinePatchRect/GridContainer" instance=ExtResource("3_f8uje")]
+layout_mode = 2
+icon = ExtResource("14_fx2a7")
+item = ExtResource("9_alns3")
+recipe = {
+"blueberry": 2,
+"crystal": 1
+}
+
+[node name="Button2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_f8uje")]
+layout_mode = 2
+icon = ExtResource("12_nkk3v")
+icon_alignment = 1
+vertical_icon_alignment = 0
+item = ExtResource("8_74i4d")
+recipe = {
+"crystal": 1,
+"goldenegg": 1,
+"yellowberry": 2
+}
+
+[node name="Button3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_f8uje")]
+layout_mode = 2
+icon = ExtResource("10_qhnwk")
+item = ExtResource("7_03c40")
+recipe = {
+"carrot": 1,
+"mushroom": 2
+}
+
+[node name="Button4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_f8uje")]
+layout_mode = 2
+icon = ExtResource("8_38ufs")
+item = ExtResource("6_chaxy")
+recipe = {
+"carrot": 1,
+"yellowberry": 2
+}
+
+[node name="Button5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_f8uje")]
+layout_mode = 2
+icon = ExtResource("6_45odj")
+item = ExtResource("5_rqxbi")
+recipe = {
+"blueberry": 1,
+"crystal": 1,
+"mushroom": 2
+}
+
+[node name="Button6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_f8uje")]
+layout_mode = 2
+icon = ExtResource("4_alns3")
+item = ExtResource("4_vljwl")
+recipe = {
+"carrot": 1,
+"crystal": 1,
+"yellowberry": 2
+}

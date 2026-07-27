@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://80ms7q2vh31v"]
+
+[ext_resource type="Texture2D" uid="uid://bgfvqtbwullq" path="res://art/Copilot_20251120_214341.png" id="3_hxypl"]
+
+[sub_resource type="GDScript" id="GDScript_cjnew"]
+script/source = "extends Control
+
+@onready var title_anim := $AnimatedSprite2D
+
+func _ready():
+	title_anim.animation = \"loop\"
+	title_anim.play()
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o0614"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hxypl")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_cjnew")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1383.5, 984)
+scale = Vector2(1.78971, 1.90234)
+sprite_frames = SubResource("SpriteFrames_o0614")
+animation = &"new_animation"
+speed_scale = 0.05

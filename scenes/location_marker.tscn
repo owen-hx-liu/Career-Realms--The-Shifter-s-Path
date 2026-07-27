@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://31vrdgjlgdkk"]
+
+[ext_resource type="Script" uid="uid://bvye16si03xmu" path="res://scenes/location_marker.gd" id="1_4cr68"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4cr68"]
+
+[node name="LocationMarker" type="Node2D" groups=["location_markers"]]
+script = ExtResource("1_4cr68")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_4cr68")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

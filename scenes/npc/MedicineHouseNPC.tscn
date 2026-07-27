@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhs24tq0d43c5"]
+
+[ext_resource type="Script" uid="uid://dbxt7flw21q18" path="res://scripts/quests/medicine_house_npc.gd" id="1_yk7ww"]
+[ext_resource type="Texture2D" uid="uid://b3o03ijaqhsg8" path="res://art/PIPOYA FREE RPG Character Sprites 32x32/PIPOYA FREE RPG Character Sprites 32x32/Female/Female 04-1.png" id="2_g1fah"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0087q"]
+atlas = ExtResource("2_g1fah")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_knn35"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0087q")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y74n3"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qbo6i"]
+radius = 57.0
+
+[node name="MedicineHouseNpc" type="CharacterBody2D"]
+script = ExtResource("1_yk7ww")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_knn35")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_y74n3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qbo6i")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
